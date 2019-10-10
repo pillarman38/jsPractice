@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+<script>
+    var i = 0
+    let prom = new Promise(function(resolve, reject) {
+
+    var loops = setInterval(function () {
+        console.log(i)
+        i += 1;
+        if (i == 11) {
+            clearInterval(loops)
+            console.log("done!")
+            resolve("done!")
+        }
+    }, 1000);
+    })
+    // resolve runs the first function in .then
+    prom.then(
+        result => alert(result), // shows "done!" after 1 second
+        error => alert(error) // doesn't run
+    );
+</script>
+</html>
