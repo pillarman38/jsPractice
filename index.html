@@ -16,8 +16,15 @@
         i += 1;
         if (i == 11) {
             clearInterval(loops)
-            console.log("done!")
-            resolve("done!")
+            if(resolve) {
+                console.log("done!")
+                resolve("done!")
+            }
+            else {
+                console.log(reject)
+                reject("Rejected")
+            }
+
         }
     }, 1000);
     })
